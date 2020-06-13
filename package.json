@@ -1,0 +1,37 @@
+{
+  "name": "laloleta",
+  "version": "1.0.0",
+  "description": "App para generar partidas personalizadas de a 10 que sean parejas en el LoL",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "devbabel": "nodemon server --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farenheit56/laloleta.git"
+  },
+  "keywords": [
+    "LoL",
+    "Matchmaking",
+    "Custom"
+  ],
+  "author": "Lucas Pérez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/farenheit56/laloleta/issues"
+  },
+  "homepage": "https://github.com/farenheit56/laloleta#readme",
+  "dependencies": {
+    "connect-history-api-fallback": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.2"
+  }
+}
