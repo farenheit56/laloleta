@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <Index msg="Bienvenide a LaLoleta perri"/>
+    <Index msg="LaLoLeta"/>
   </div>
 </template>
 
@@ -13,6 +13,6 @@ export default {
   name: 'Home',
   components: {
     Index
-  }
+  },
 }
 </script>

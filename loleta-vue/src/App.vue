@@ -15,7 +15,7 @@
           width="40"
         />
 
-        <h1>La Loleta - Personalaised LoL matchmaikin</h1>
+        <h3>La Loleta</h3>
       </div>
 
       <v-spacer></v-spacer>
@@ -33,11 +33,13 @@
     <v-main>
       <Index/>
     </v-main>
+            
   </v-app>
 </template>
 
 <script>
 import Index from './components/Index';
+
 
 export default {
   name: 'App',
