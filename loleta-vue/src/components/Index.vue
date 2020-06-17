@@ -49,7 +49,7 @@
         label="Summoner 9"
         required
       ></v-text-field>
-      <v-text-field class="pa-2" 
+      <v-text-field class="pa-2 pb-0" 
         v-model="summoner10"        
         label="Summoner 10"
         required
@@ -63,6 +63,145 @@
       >
         Armar equipo
       </v-btn>
+    </v-layout>
+    <v-layout justify-center mt-5 v-if="result.display">
+      <v-flex xs5 sm4>
+        <v-card
+
+          color="red darken-4"
+          dark
+          class="mx-auto ma-5 "          
+          max-width="322"
+          outlined
+          
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 1</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+        <v-card
+          color="red darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 2</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+        <v-card
+          color="red darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 3</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+        <v-card
+          color="red darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 4</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+        <v-card
+          color="red darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 5</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+      </v-flex>
+      <v-flex xs5 sm4>
+        <v-card
+          color="blue darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 6</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+        <v-card
+          color="blue darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 7</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+        <v-card
+          color="blue darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 8</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+        <v-card
+          color="blue darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 9</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+        <v-card
+          
+          color="blue darken-4"
+          dark
+          class="mx-auto ma-5"
+          max-width="322"
+          outlined
+        >
+          <v-list-item three-line>
+            <v-list-item-content>
+              <v-list-item-title class="subtitle-1 mb-1">Summoner 10</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-card>
+      </v-flex>
     </v-layout>
     <v-dialog
           v-model="loading.estado"
@@ -109,30 +248,25 @@ import axios from "axios";
       summoner10:"",
     }),
     methods: {
-    ...mapMutations(['mostrarLoading','ocultarLoading']),
+    ...mapMutations(['showSumm','mostrarLoading','ocultarLoading',]),
     async summonersSubmit(){
       //let riotAPI = 'RGAPI-58f1c92c-6db0-4f82-82fa-ee8e1d93b8f4';
-
+    
       try {
         this.mostrarLoading({titulo: 'BANCA QUE BUSCO ÑERY'})
-        let datosAPI = await axios.get(`https://mindicador.cl/api/dolar/04-04-1992`);
-        
-        if(datosAPI.data.serie.length > 0){
-          this.valor = await datosAPI.data.serie[0].valor;
-        } else {
-          this.valor = 'ES FINDE PERRI';
-        }
-        
+        let datosAPI = await axios.get(`https://mindicador.cl/api/dolar/04-04-1994`);
+        console.log(datosAPI)
       } catch (error) {
         console.log(error)
-      } finally {
+      } finally {        
         this.ocultarLoading();
+        this.showSumm();
       }
       
     },
   },
     computed: {
-    ...mapState(['loading']),
+    ...mapState(['loading','result']),
   }
 }
 </script>

@@ -4,10 +4,14 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+  namespaced: true,
   state: {
     loading: {
       titulo: "HOLI",
       estado: false,
+    },
+    result: {
+      display: false,
     }
   },
   mutations: {
@@ -17,7 +21,10 @@ export default new Vuex.Store({
     },
     ocultarLoading(state){
       state.loading.estado = false;
-    }
+    },
+    showSumm(state){
+      state.result.display = true;
+    },
   },
   actions: {
   },
