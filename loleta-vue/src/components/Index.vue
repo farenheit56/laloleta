@@ -230,11 +230,8 @@
 //import axios from "axios"; 
 import {mapMutations} from "vuex";
 import {mapState} from "vuex";
-import axios from "axios"; 
-
   export default {
     name: 'Index',
-
     data: () => ({
       summoner1:"",
       summoner2:"",
@@ -254,7 +251,7 @@ import axios from "axios";
     
       try {
         this.mostrarLoading({titulo: 'BANCA QUE BUSCO ÑERY'})
-        let datosAPI = await axios.get(`https://mindicador.cl/api/dolar/04-04-1994`);
+        let datosAPI = await fetch(`https://la2.api.riotgames.com/lol/summoner/v4/summoners/by-name/federuchis?api_key=RGAPI-0e2e070e-1d6f-4826-8e49-f7e57b98dc5c`);
         console.log(datosAPI)
       } catch (error) {
         console.log(error)

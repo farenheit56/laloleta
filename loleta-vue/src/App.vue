@@ -25,7 +25,6 @@
         target="_blank"
         text
       >
-        <span class="mr-2">Haceme click porfa</span>
         <v-icon>open_in_new</v-icon>
       </v-btn>
     </v-app-bar>
